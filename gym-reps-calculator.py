@@ -42,7 +42,7 @@ st.image('media/logo.png', width=100)
 st.title('Weight training repetitions calculator')
 
 st.write('When weight training, most people are familiar with the idea that as you add more weight to the bar, the number of repetitions you can do goes down. If a training programme calls for 12 repetitions of an exercise, how much weight should you put on the bar? This app calculates this for you by reference to your \'*1 rep max (1RM)*\', the amount of weight that is so high you could only perform one repetition of the exercise *with good form* before failure.')
-st.write('You can use the app in one of two ways: either work out what your 1RM for an exercise is and then the app suggests rep targets for the same exercise using lower weights; or pick a lower weight and count how many reps you can do to failure and use that as an input to estimate your 1RM')
+st.write('You can use the app in one of two ways: either work out what your 1RM for an exercise is and then the app suggests rep targets for the same exercise using lower weights; or pick a lower weight and count how many reps you can do to failure and use that as an input to estimate your 1RM. To get started, select your units and enter the weight and reps you managed for a set.')
 
 units = st.radio('Select your weight units', ('lbs', 'kg'))
 
@@ -95,11 +95,11 @@ if reps != None and weight != None:
         for l in range(1, 21,1):
             st.write("%.0f" % reps[l])
 
-st.write('\n')
-st.markdown('<strong><em>For maximum <span style="color:#F63366;">strength</span> gains, do <span style="color:#F63366;">sets of 3 to 6 reps</span>, performing the exercises slowly, not going to failure and taking several minutes rest between sets</em></strong>', unsafe_allow_html=True)
-st.markdown('<strong><em>For maximum <span style="color:#F63366;">power</span> gains (force multiplied by speed), do <span style="color:#F63366;">sets of about 6 reps</span>, performing the concentric (contraction) phase as quickly as you can while maintaining good form</em></strong>', unsafe_allow_html=True) 
-st.markdown('<strong><em>For <span style="color:#F63366;">hypertrophy</span> (growing big muscles), do <span style="color:#F63366;">sets of between 8 and 12 reps</span>, performing the exercises slowly with a minute or two between sets and taking the last set to failure</em></strong>', unsafe_allow_html=True) 
-st.markdown('<strong><em>To develop  <span style="color:#F63366;">muscular endurance</span>  and strong connective tissues do <span style="color:#F63366;">sets of 15 to 20 reps</span></em></strong>', unsafe_allow_html=True)           
+    st.write('\n')
+    st.markdown('<strong><em>For maximum <span style="color:#F63366;">strength</span> gains, do <span style="color:#F63366;">sets of 3 to 6 reps</span>, performing the exercises slowly, not going to failure and taking several minutes rest between sets</em></strong>', unsafe_allow_html=True)
+    st.markdown('<strong><em>For maximum <span style="color:#F63366;">power</span> gains (force multiplied by speed), do <span style="color:#F63366;">sets of about 6 reps</span>, performing the concentric (contraction) phase as quickly as you can while maintaining good form</em></strong>', unsafe_allow_html=True) 
+    st.markdown('<strong><em>For <span style="color:#F63366;">hypertrophy</span> (growing big muscles), do <span style="color:#F63366;">sets of between 8 and 12 reps</span>, performing the exercises slowly with a minute or two between sets and taking the last set to failure</em></strong>', unsafe_allow_html=True) 
+    st.markdown('<strong><em>To develop  <span style="color:#F63366;">muscular endurance</span>  and strong connective tissues do <span style="color:#F63366;">sets of 15 to 20 reps</span></em></strong>', unsafe_allow_html=True)           
 
 st.write('\n')
 st.write('\n')
