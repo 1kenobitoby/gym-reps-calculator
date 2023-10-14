@@ -15,6 +15,16 @@ st.set_page_config(
     #}
 )
 
+# Hack css style to force columns not to respond
+st.write('''<style>
+
+    [data-testid="column"] {
+        width: calc(33.3333% - 1rem) !important;
+        flex: 1 1 calc(33.3333% - 1rem) !important;
+        min-width: calc(33% - 1rem) !important;
+    }
+    </style>''', unsafe_allow_html=True) 
+
 # html strings used to render donate button and link and text
 donate_text = '<h6> Useful? Buy us a coffee. </h6>'
 
@@ -51,6 +61,7 @@ with column1:
     weight = st.number_input('What weight were you lifting?', min_value=0.0, max_value=1000.0, step=0.5, value=None, format="%.1f")
 with column2:
     reps = st.number_input('And how many reps did you manage with good form?', min_value=0, max_value=20, step=1, value=None)
+
 
 # linear regression parameters of standard percentage of percentage of RM (y) plotted against number of reps (x)
 m = -2.571
@@ -94,6 +105,8 @@ if reps != None and weight != None:
         st.write('***Reps***')
         for l in range(1, 21,1):
             st.write("%.0f" % reps[l])
+
+           
 
     st.write('\n')
     st.markdown('<strong><em>For maximum <span style="color:#F63366;">strength</span> gains, do <span style="color:#F63366;">sets of 3 to 6 reps</span>, performing the exercises slowly, not going to failure and taking several minutes rest between sets</em></strong>', unsafe_allow_html=True)
